@@ -1,0 +1,5 @@
+INSERT INTO sh_roles (title) VALUES
+('ROLE_CLIENT'),
+('ROLE_MANAGER'),
+('ROLE_ADMIN'),
+('ROLE_DEVELOPER');

@@ -1,0 +1,15 @@
+dir:
+    temp: /home/darpa/coding/Java/Shapy-server-local/backend-service/src/main/resources/temp
+    font: /home/darpa/coding/Java/Shapy-server-local/backend-service/src/main/resources/fonts/
+jwt:
+    access-token-key: '{"kty":"oct","k":"hi7S5RX5ZRZooHA0RKGctZ-KtR9FoESgCnH-3BNg5XI"}'
+    refresh-token-key: '{"kty":"oct","k":"956PBFst1FguLr5irJD-aQ"}'
+datasource:
+    maximumPoolSize: 90
+    driverClassName: org.postgresql.Driver
+    jdbcUrl: jdbc:postgresql://db:5432/shapy_db
+    username: shapy_app
+    password: +uUL9u@0T4!qCv6%~
+logging:
+    level:
+        org.springframework.security: trace

@@ -1,0 +1,48 @@
+version: '5'
+
+networks:
+  internal_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.101.0/24
+    
+services:
+  backend-service:
+    image: backend-service:1.6.1
+    container_name: backend-service
+    environment:
+      - TZ=Europe/Moscow
+    build:
+      context: ./backend-service
+      dockerfile: Dockerfile.app
+    networks:
+    - internal_net
+    ports:
+      - 8080:8080
+    volumes:
+      - app:/app/fonts  
+    depends_on:
+      - db
+  db:
+    container_name: db
+    build:
+        context: ./postgresql
+        dockerfile: Dockerfile.db
+    restart: always
+    environment:
+      - POSTGRES_USER=postoperator
+      - POSTGRES_PASSWORD=Jomv&!~qc!2&54E
+      - TZ=Europe/Moscow
+    networks:
+    - internal_net  
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
+  app:
+    driver: local  

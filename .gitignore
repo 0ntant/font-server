@@ -1,0 +1,5 @@
+.idea
+backend-service/.mvn/wrapper/*
+backend-service/mvnw
+backend-service/mvnw.cmd
+backend-service/src/test/resources/*

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Font download</title>
+    <script th:src="@{/scripts/node_modules/opentype.js/dist/opentype.js}">
+    </script>
+    <script  th:src ="@{/scripts/fontDownload.js}">
+    
+        
+    </script>
+</head>
+
+<body>
+    <h1>Font download</h1>
+    <input type="file" id="fileInput" onchange="handleFile(event)">
+</body>
+
+</html>
